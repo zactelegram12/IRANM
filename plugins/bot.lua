@@ -5,7 +5,6 @@
 --                                              --
 --------------------------------------------------
 
-
 -- Checks if bot was disabled on specific chat
 local function is_channel_disabled( receiver )
 	if not _config.disabled_channels then
@@ -80,10 +79,8 @@ end
 
 return {
 	patterns = {
-	"^[/!#]bot? (on)",
-	"^[/!#]bot? (off)",
-	"^bot? (on)",
-	"^bot? (off)" }, 
+		"^#bot? (on)",
+		"^#bot? (off)" }, 
 	run = run,
 	pre_process = pre_process
 }
