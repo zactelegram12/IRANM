@@ -1,13 +1,7 @@
 --------------------------------------------------
---      ____  ____ _____                        --
---     |    \|  _ )_   _|___ ____   __  __      --
---     | |_  )  _ \ | |/ ·__|  _ \_|  \/  |     --
---     |____/|____/ |_|\____/\_____|_/\/\_|     --
 --                                              --
---------------------------------------------------
---                                              --
---       Developers: @Josepdal & @MaSkAoS       --
---     Support: @Skneos,  @iicc1 & @serx666     --
+--            Developer: @AmirDark              --
+--             Support: @DarkTeam               --
 --                                              --
 --------------------------------------------------
 
@@ -332,8 +326,10 @@ end
 
 return {
 	patterns = {
-		'#(install) (english_lang)$',
-		'#(update) (english_lang)$'
+		'[/!#](install) (english_lang)$',
+		'[/!#]((update) (english_lang)$',
+		'(install) (english_lang)$',
+		'(update) (english_lang)$'
 	},
 	run = run
 }
