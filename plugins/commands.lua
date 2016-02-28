@@ -53,7 +53,7 @@ do
     return {
         patterns = {
             "^[!/#](commands)$",
-            "^#[!/#](commands) (.+)",
+            "^[!/#](commands) (.+)",
             "^(commands)$",
             "^(commands) (.+)"
         }, 
