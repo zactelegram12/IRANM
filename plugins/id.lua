@@ -1,13 +1,7 @@
 --------------------------------------------------
---      ____  ____ _____                        --
---     |    \|  _ )_   _|___ ____   __  __      --
---     | |_  )  _ \ | |/ ·__|  _ \_|  \/  |     --
---     |____/|____/ |_|\____/\_____|_/\/\_|     --
 --                                              --
---------------------------------------------------
---                                              --
---       Developers: @Josepdal & @MaSkAoS       --
---     Support: @Skneos,  @iicc1 & @serx666     --
+--            Developer: @AmirDark              --
+--             Support: @DarkTeam               --
 --                                              --
 --------------------------------------------------
 
@@ -93,7 +87,7 @@ local function run(msg, matches)
     local receiver = get_receiver(msg)
     local chat = msg.to.id
     -- Id of the user and info about group / channel
-    if matches[1] == "#id" then
+    if matches[1] == "id" then
         if permissions(msg.from.id, msg.to.id, "id") then
             if msg.to.type == 'channel' then
                 send_msg(msg.to.peer_id, '🔠 '..lang_text(chat, 'supergroupName')..': '..msg.to.print_name:gsub("_", " ")..'\n👥 '..lang_text(chat, 'supergroup')..' ID: '..msg.to.id..'\n🆔 '..lang_text(chat, 'user')..' ID: '..msg.from.id, ok_cb, false)
@@ -151,11 +145,16 @@ end
 
 return {
   patterns = {
-    "^#(whois)$",
-    "^#id$",
-    "^#ids? (chat)$",
-    "^#ids? (channel)$",
-    "^#(whois) (.*)$"
+    "^[/!#](whois)$",
+    "^[/!#](id)$",
+    "^[/!#](ids)? (chat)$",
+    "^[/!#](ids)? (channel)$",
+    "^[/!#](whois) (.*)$",
+    "^(whois)$",
+    "^(id)$",
+    "^(ids)? (chat)$",
+    "^(ids)? (channel)$",
+    "^(whois) (.*)$"
   },
   run = run
 }
