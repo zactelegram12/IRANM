@@ -1,13 +1,7 @@
 --------------------------------------------------
---      ____  ____ _____                        --
---     |    \|  _ )_   _|___ ____   __  __      --
---     | |_  )  _ \ | |/ ·__|  _ \_|  \/  |     --
---     |____/|____/ |_|\____/\_____|_/\/\_|     --
 --                                              --
---------------------------------------------------
---                                              --
---       Developers: @Josepdal & @MaSkAoS       --
---     Support: @Skneos,  @iicc1 & @serx666     --
+--            Developer: @AmirDark              --
+--             Support: @DarkTeam               --
 --                                              --
 --------------------------------------------------
 
@@ -145,7 +139,7 @@ local function run(msg, matches)
 	to_id = msg.to.id
   -- Show the available plugins
   if permissions(msg.from.id, msg.to.id, "plugins") then
-    if matches[1] == '#plugins' then
+    if matches[1] == 'plugins' then
       return list_plugins()
     end
 
@@ -189,12 +183,19 @@ end
 
 return {
   patterns = {
-    "^#plugins$",
-    "^#plugins? (enable) ([%w_%.%-]+)$",
-    "^#plugins? (disable) ([%w_%.%-]+)$",
-    "^#plugins? (enable) ([%w_%.%-]+) (chat)",
-    "^#plugins? (disable) ([%w_%.%-]+) (chat)",
-    "^#plugins? (reload)$" },
+    "^[/!#](plugins)$",
+    "^[/!#](plugins) (enable) ([%w_%.%-]+)$",
+    "^[/!#](plugins) (disable) ([%w_%.%-]+)$",
+    "^[/!#](plugins) (enable) ([%w_%.%-]+) (chat)",
+    "^[/!#](plugins) (disable) ([%w_%.%-]+) (chat)",
+    "^[/!#](plugins) (reload)$",
+    "^(plugins)$",
+    "^(plugins) (enable) ([%w_%.%-]+)$",
+    "^(plugins) (disable) ([%w_%.%-]+)$",
+    "^(plugins) (enable) ([%w_%.%-]+) (chat)",
+    "^(plugins) (disable) ([%w_%.%-]+) (chat)",
+    "^(plugins) (reload)$"
+    },
   run = run
 }
 
